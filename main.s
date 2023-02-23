@@ -16,8 +16,8 @@ SPI_MasterInit:	    ; Set Clock edge to negative
 	; the same number we want to input but in human readable way
     movwf   SSP2CON1, A	
     ; SDO2 output; SCK2 output	
-    bcf	    TRISD, PORTD_SDO2_POSN, A	; SDO2 output
-    bcf	    TRISD, PORTD_SCK2_POSN, A	; SCK2 output	
+    bcf	    TRISD, PORTD_SDO2_POSN, A	; SDO2 output which is the RD4 bit in the TRISD f
+    bcf	    TRISD, PORTD_SCK2_POSN, A	; SCK2 output which is the RD6 bit in the TRISD f. PORTD_SCK2_POSN is just a compiler defined shortcut 
     return
 
 SPI_MasterTransmit:  ; Start transmission of data (held in W)
